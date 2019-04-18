@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block title%}Bank{%endblock%}
+{%block content%}
+<h1 class="h2">List Of Current FDs</h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      {%for i in Interests%}
+      <h3>FD rate of interest = {{i.fdinterest}}</h3>{%endfor%}
+      <tr>
+        <th>A/C No.</th>
+        <th>SapId</th>
+        <th>Name</th>
+        <th>FD Capital</th>
+        <th>Rate of Interest</th
+        <th>Maturity Date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+{%for i in Banks%}
+  <tr>
+    <td>{{i.accountnumber}}</td>
+    <td>{{i.sapid}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.cdamount}}</td>
+    <td>{{i.cdbalance}}</td>
+    <td>{{i.totalamount}}</td>
+
+  </tr>
+
+{%endfor%}
+
+</tbody>
+</table>
+</div>
+{%endblock%}
